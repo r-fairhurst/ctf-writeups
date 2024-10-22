@@ -26,6 +26,13 @@ Converting this base64 string to a string gives us the following:
     "password": "osu{d0nt_st0r3_y0ur_s3cr3ts_l1k3_th1s}"
 }
 ```
+
+And there is our first flag!
+
+```shell
+osu{d0nt_st0r3_y0ur_s3cr3ts_l1k3_th1s}
+```
+
 We use this sftp server for the second flag.
 
 As for the first flag, it is used as the password to the sftp server
