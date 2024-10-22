@@ -11,7 +11,8 @@ hidden in a base64 string, and converting it to a string gives you the password 
 in the SFTP server, there is an FTP file; within it, there is the flag.txt, which you don't have permission to read.
 Using help shows we have gotten working, so doing get flag.txt downloads the flag onto our system to read it.
 
-## Flag3: using dnspy and putting a breakpoint in the malware to stop running the program, letting us access the encrypted data, Unencrypted, will give us a flag and URL the data is being sent to: http://scriptkidrev.ctf-league.osusec.org/credentials
+## Flag3: 
+Using dnspy and putting a breakpoint in the malware to stop running the program, letting us access the encrypted data, Unencrypted, will give us a flag and URL the data is being sent to: http://scriptkidrev.ctf-league.osusec.org/credentials
 
 ## Flag4: using the previous HTTP address, we can use the commands:
 
