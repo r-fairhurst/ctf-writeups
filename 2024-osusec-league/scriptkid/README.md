@@ -6,7 +6,12 @@
 ## Solution
 
 ### Flag 1:
-hidden in a base64 string, and converting it to a string gives you the password to his server, which is the flag. 
+Using dnspy to access the code in the .dll or .exe file within "extract_all_of_these" we can find look at the code in a readable format. 
+
+After examing the code, we can see that there is a string that is encoded in base64, which is used when accessing a server 
+
+Gettign the base64 data, and converting it to a string gives you the password to his server, which is the flag as well as the sftp server to use for the second flag.
+
 ```shell
 private static string stealerConfig =
 "ewogICJjMl9zZXJ2ZXIi0iAic2Z0cDovL3NjcmlwdGtpZC5jdGYtbGVhZ2Uub3N1c2VjLm9yZyIsCiAgInBvcnQiOiAxMzA0LAogICJ1c2VybmFtZSI6ICJyZWFsaXR5c3VyZiIsCiAgInBhc3N3b3JkIjogIm9zdXtkMG50X3N0MHIzX3kwdXJfczNjcjN0c19sMWszX3RoMXN9Igp9ICA=";
