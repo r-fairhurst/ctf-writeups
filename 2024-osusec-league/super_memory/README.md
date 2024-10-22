@@ -177,3 +177,5 @@ if (input == 's' && current_block_properties.mustInteract) {
 This let us keep trying to add the item to our inventory and caused memory overflow into the dollars variable in the structure.
 
 Very cool ctf 
+
+>** I do not own nor did I create the content for this challenge. This is a writeup for the challenge that I solved **
