@@ -97,11 +97,17 @@ In this function the only part we care about is when it compares the user input,
 
 Since I did not want to do math and logic manually to figure out the corresponding choices based on the users name, and then go through the logic in "throw_hands" to get the actually correct inputs, I decided to write a short C program to do it for me
 
-for example: 
+for example: inputting bbbbbbbb into my c progame gives you this as a result: 
 
-output from make_moves func: 1 0 2 0 3 1 3 1 0 2
-input needed for aaaaaaaaaa: 2 1 0 1 0 2 1 2 1 0
+```shell
+Enter a string at least 10 characters long: bbbbbbbbbbbbbbbbb
+Calculating outputs for make_moves: 
+ 2   2   1   0   3   3   2   1   0   0  
+Calculating corresponding inputs... enter in: 
+ 0   0   2   1   0   0   0   2   1   1 
+```
 
+Testing this on the program by inputting the corresponding input from my program to the server, it gives me the flag:
 
 ```shell
 osu{74k3_m3_70_y0u2_134d3r}

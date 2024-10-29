@@ -20,20 +20,17 @@ int main() {
     if (len < 10) {
         printf("String is too short\n");
         return 1;
-    } else {
-        printf("String is long enough\n");
-    }
+    } 
 
     printf("Calculating outputs for make_moves: \n");
     for (int i = 0; i < 10; i++) {
         userInput[i] = (char)(userInput[i] + delta);
         out[i] = userInput[i] % 4;
         delta = (userInput[i] + 7331) % 21;
-        printf(" %d  ", out[i]);
+        printf("%d  ", out[i]);
     }
 
-    printf("\nCalculating corresponding inputs\n");
-    printf("enter in: \n");
+    printf("\nCalculating corresponding inputs... enter in: \n");
     for (int i = 0; i < 10; i++) {
         int u;
         int choice = out[i];
@@ -47,9 +44,9 @@ int main() {
         } else {
             u = 0; // Default case, should not happen
         }
-
-        printf(" %d  ", u);
+        printf("%d  ", u);
     }
+    printf("\n");
     return 0;
 }
 
