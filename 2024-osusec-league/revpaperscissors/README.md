@@ -9,7 +9,7 @@ runing challenge one lets us enter in a name, and then 3 options for rock, paper
 
 Unsure of where to go next besides trying to brute force through the program, we open up ghidra to look at the decompiled code
 
-Here we notice in the main program a set of 5 functions calls, each has a input of either rock paper or scissors and after those functions, it will give us the flag
+Here we noticed in the main program a set of 5 functions calls, each has a input of either rock paper or scissors and after those functions, it will give us the flag
 
 ```c
 int main ()
@@ -32,11 +32,19 @@ trying it out we enter our name, and then 0, 2, 1, 1, 2 in that order and it giv
 ```shell
 osu{n3x7_13v31}
 ```
+
 And onto flag 2!
 
 ### Flag 2
 
-unreadable:
+Similar to challenge 1 we have to beat the computer in rock paper scissors, but this time we have to beat it 10 times in a row
+
+Looking at the source code there is no hard coded flag, so we have to figure out how to beat the computer 10 times in a row
+
+In the code it seems to user a function called "make_moves" to decide what the computer will throw, and then compares it to the user input
+
+>here is the decompiled code for "make_moves"
+
 ```c
 void make_moves(char *in,int *out)
 {
@@ -54,9 +62,8 @@ void make_moves(char *in,int *out)
   return;
 }
 ```
+In this state with the hex values it is hard to read, So lets make it more readable
 
-
-readable:
 ```c
 void make_moves(char *in,int *out)
 {
@@ -75,7 +82,13 @@ void make_moves(char *in,int *out)
 }
 ```
 
+There! Much better, now we can see the math a bit easier
+
+It seeems to take a string, and then for each position in the string (assumming it is at least 10 characters long) will do math and store the resulting int into the out array
+
 "make_moves" only decides what the program uses as input for the "throw_hands" function, so we can just use the same inputs as before to keep things simple
+
+Then after the make_moves function is called, it will call the "throw_hands" function to compare the user input to the choice from "make_moves"
 
 ```c
 throw_hands(...)
@@ -93,7 +106,9 @@ throw_hands(...)
 ...
 ```
 
-In this function the only part we care about is when it compares the user input, "u", to the choice from "makes_moves", the logic was a bit complex but I believe I got it right and figured out what input to use based on the choice. 
+This function is also a bit hard to read due to the logic, and the fact that the make_moves function can have 4 different values in the array, instead of 3
+
+In this function the only part we really care about is when it compares the user input, "u", to the choice from "makes_moves", the logic was a bit complex but I believe I got it right and figured out what input to use based on the choice. 
 
 Since I did not want to do math and logic manually to figure out the corresponding choices based on the users name, and then go through the logic in "throw_hands" to get the actually correct inputs, I decided to write a short C program to do it for me
 
