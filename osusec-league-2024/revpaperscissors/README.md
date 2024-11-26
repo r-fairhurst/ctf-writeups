@@ -127,3 +127,5 @@ Testing this on the program by inputting the corresponding input from my program
 ```shell
 osu{74k3_m3_70_y0u2_134d3r}
 ```
+
+>** I do not own nor did I create the content for this challenge. This is a writeup for the challenge that I solved **
