@@ -1,0 +1,55 @@
+flag 1:
+http://thritter.ctf-league.osusec.org/public/..%2fsecrets.txt
+directory traversal attack, the hint to it was in line 281
+
+
+flag 2:
+on line 300 it checks for Thr33lonMusk as a user
+this is at address, http://thritter.ctf-league.osusec.org/verified
+adding a cookie as name = user and value = Thr33lonMusk and then refreshing gives us the flag: osu{but_my_blue_check}
+
+
+flag 3: 
+the random seed is hardcoded 0
+
+copy and pasting the randomizing code for the session id gets us this, on my windows machine it gave me something different: 98552F61E2726
+then another teammate did the same thing on python tutor, and got this:
+66334873643C9869327B23C66B8B4567
+
+so i copy and pasted my code and ran it on osu servers and got the correct session
+
+then going to http://thritter.ctf-league.osusec.org/mythreets
+
+and changing the cookie value for session to the value above, and refreshing gets us this: 
+osu{you_just_witnessed_the_strength_of_threet_knowledge}
+
+
+flag 4
+
+we need to add 3 threets first - these do not matter, just 3 random threets
+
+we have a session, and we want to overflow likes, the struct session has the threets, then likes variables
+
+decimal to hex
+1633840489 = 0x61626d69
+1633969523 = 0x61646573
+1919299174 = 0x72662e66
+
+
+hex to decimal:
+abmi
+ades
+rf,f
+
+little endian:
+imba
+seda
+f,fr
+
+_imbasedaf.fr
+
+
+doing after the 3 threets 
+
+_imbasedaf.fr010101010101
+
