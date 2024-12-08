@@ -45,6 +45,8 @@ Flag 2 is only accessible if the user is `Thr33lonMusk` so we try adding a cooki
 osu{but_my_blue_check}
 ```
 
+## Finding Flag 1
+
 Realizing that the we missed the first flag we go back to the source code and try and find out some information on it. 
 
 ```c
@@ -96,6 +98,7 @@ And the directory traversal attack worked, and we got the flag.
 ```shell
 osu{h4ck_n_sl4sh}
 ```
+## Finding Flag 3
 
 Now we have to find the two other flags, flag 3 and flag 4.
 
@@ -179,6 +182,8 @@ This session id was stored as a cookie and just modifing the cookie to the sessi
 ```shell
 osu{you_just_witnessed_the_strength_of_threet_knowledge}
 ```
+
+## Finding Flag 4
 
 Now we have to get the last flag, flag 4.
 
