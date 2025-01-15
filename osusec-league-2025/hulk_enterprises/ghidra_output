@@ -1,0 +1,263 @@
+#include "out.h"
+
+// WARNING: Function: __x86.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
+int _init(EVP_PKEY_CTX *ctx)
+{
+  int iVar1;
+  
+  iVar1 = __gmon_start__();
+  return iVar1;
+}
+
+
+void FUN_08049020(void)
+{
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+void __libc_start_main(void)
+{
+  __libc_start_main();
+  return;
+}
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+
+int fflush(FILE *__stream)
+{
+  int iVar1;
+  
+  iVar1 = fflush(__stream);
+  return iVar1;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+
+char * fgets(char *__s,int __n,FILE *__stream)
+{
+  char *pcVar1;
+  
+  pcVar1 = fgets(__s,__n,__stream);
+  return pcVar1;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+
+size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
+{
+  size_t sVar1;
+  
+  sVar1 = fread(__ptr,__size,__n,__stream);
+  return sVar1;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+
+int puts(char *__s)
+{
+  int iVar1;
+  
+  iVar1 = puts(__s);
+  return iVar1;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+
+FILE * fopen(char *__filename,char *__modes)
+{
+  FILE *pFVar1;
+  
+  pFVar1 = fopen(__filename,__modes);
+  return pFVar1;
+}
+
+
+
+// WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
+
+void processEntry _start(undefined4 param_1,undefined4 param_2)
+{
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,0,0,param_1,auStack_4);
+  do {
+                    // WARNING: Do nothing block with infinite loop
+  } while( true );
+}
+
+
+
+// WARNING: This is an inlined function
+
+void __i686_get_pc_thunk_bx(void)
+{
+  return;
+}
+
+
+
+void _dl_relocate_static_pie(void)
+{
+  return;
+}
+
+
+
+// WARNING: This is an inlined function
+
+void __x86_get_pc_thunk_bx(void)
+{
+  return;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x080490ec)
+// WARNING: Removing unreachable block (ram,0x080490f5)
+
+void deregister_tm_clones(void)
+{
+  return;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x08049138)
+// WARNING: Removing unreachable block (ram,0x08049141)
+
+void register_tm_clones(void)
+{
+  return;
+}
+
+
+
+void __do_global_dtors_aux(void)
+{
+  if (completed_0 == '\0') {
+    deregister_tm_clones();
+    completed_0 = 1;
+    return;
+  }
+  return;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x08049138)
+// WARNING: Removing unreachable block (ram,0x08049141)
+
+void frame_dummy(void)
+{
+  return;
+}
+
+
+
+// WARNING: Function: __x86.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+void read_flag(void)
+{
+  char local_30 [32];
+  FILE *local_10;
+  
+  local_10 = fopen("flag.txt","r");
+  local_30[0] = '\0';
+  local_30[1] = '\0';
+  local_30[2] = '\0';
+  local_30[3] = '\0';
+  local_30[4] = '\0';
+  local_30[5] = '\0';
+  local_30[6] = '\0';
+  local_30[7] = '\0';
+  local_30[8] = '\0';
+  local_30[9] = '\0';
+  local_30[10] = '\0';
+  local_30[0xb] = '\0';
+  local_30[0xc] = '\0';
+  local_30[0xd] = '\0';
+  local_30[0xe] = '\0';
+  local_30[0xf] = '\0';
+  local_30[0x10] = '\0';
+  local_30[0x11] = '\0';
+  local_30[0x12] = '\0';
+  local_30[0x13] = '\0';
+  local_30[0x14] = '\0';
+  local_30[0x15] = '\0';
+  local_30[0x16] = '\0';
+  local_30[0x17] = '\0';
+  local_30[0x18] = '\0';
+  local_30[0x19] = '\0';
+  local_30[0x1a] = '\0';
+  local_30[0x1b] = '\0';
+  local_30[0x1c] = '\0';
+  local_30[0x1d] = '\0';
+  local_30[0x1e] = '\0';
+  local_30[0x1f] = '\0';
+  fread(local_30,1,0x1f,local_10);
+  puts(local_30);
+  fflush(_stdout);
+  return;
+}
+
+
+
+// WARNING: Function: __x86.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+void menu(int param_1)
+{
+  char local_1c [20];
+  
+  if (param_1 == -0x35012ff3) {
+    puts("censored_the_flag\ngoodbye, admin\n");
+    fflush(_stdout);
+  }
+  else {
+    puts("Welcome, new user!");
+    puts("What username would you like to use?");
+    fflush(_stdout);
+    fgets(local_1c,0xff,_stdin);
+    puts(local_1c);
+    puts("registered! goodbye.");
+    fflush(_stdout);
+  }
+  return;
+}
+
+
+
+// WARNING: Function: __x86.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 main(void)
+{
+  puts("Hello!\nWelcome to HULK Enterprise\'s Linux Library!");
+  fflush(_stdout);
+  menu(0xbeefbabe);
+  return 0;
+}
+
+
+
+// WARNING: Function: __x86.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
+
+void _fini(void)
+{
+  return;
+}
+
+
+
