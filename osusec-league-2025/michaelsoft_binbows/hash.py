@@ -16,7 +16,7 @@ def hash_function(input_str: str) -> str:
     return ''.join(output_chars)
 
 if __name__ == "__main__":
-    test_input = "allaaaaa"
+    test_input = "aaaaaaaa"
     hashed = hash_function(test_input)
     print(f"Input:  {test_input}")
     print(f"Output: {hashed}")
