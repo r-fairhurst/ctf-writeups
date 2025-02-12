@@ -147,7 +147,7 @@ and all you have to do to use it is change the hardcoded values, compile it, and
 
 ### Flag
 ```shell
-osu{twentyonthebeach}
+qosu{twentyonthebeach}
 ```
 
 **I do not own nor did I create the content for this challenge. This is a writeup for the challenge that I solved**
