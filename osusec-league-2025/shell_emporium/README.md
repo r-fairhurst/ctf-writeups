@@ -97,11 +97,9 @@ this address is the same as the one we got at the start of the program, but we a
 
 and then we just spam the address it in hopes of overwritting a return address
 
-this resulted in us getting a shell and the flag
+this resulted in us getting a shell it doesn't take more than 'ls' to find flag.txt and then cat the flag
 
+#### Flag
 ```
 osu{5411y_p0p5_5345h3115_4_7h3_5345h0r3}
 ```
-
-
-
