@@ -1,0 +1,12 @@
+#!/bin/bash
+
+numberWeWantToGenerate=22222
+
+for ((seed=0; seed<32768; seed++)); do
+  RANDOM=$seed
+  if [ "$RANDOM" -eq $numberWeWantToGenerate ]; then
+    echo "generated: $RANDOM"
+    echo "seed is: $seed"
+    break
+  fi
+done
