@@ -103,3 +103,4 @@ this resulted in us getting a shell it doesn't take more than 'ls' to find flag.
 ```
 osu{5411y_p0p5_5345h3115_4_7h3_5345h0r3}
 ```
+** I do not own nor did I create the content for this challenge. This is a writeup for the challenge that I solved **
