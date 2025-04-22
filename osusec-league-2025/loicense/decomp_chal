@@ -1,0 +1,275 @@
+void _init()
+{
+    if (__gmon_start__)
+        __gmon_start__();
+}
+
+int64_t sub_1020()
+{
+    int64_t var_8 = data_3ff0;
+    /* jump -> data_3ff8 */
+}
+
+int32_t puts(char const* str)
+{
+    /* tailcall */
+    return puts(str);
+}
+
+int64_t sub_1036()
+{
+    int64_t var_8 = 0;
+    /* tailcall */
+    return sub_1020();
+}
+
+void __stack_chk_fail() __noreturn
+{
+    /* tailcall */
+    return __stack_chk_fail();
+}
+
+int64_t sub_1046()
+{
+    int64_t var_8 = 1;
+    /* tailcall */
+    return sub_1020();
+}
+
+int64_t mmap(void* addr, uint64_t len, int32_t prot, int32_t flags, int32_t fd, off64_t offset)
+{
+    /* tailcall */
+    return mmap(addr, len, prot, flags, fd, offset);
+}
+
+int64_t sub_1056()
+{
+    int64_t var_8 = 2;
+    /* tailcall */
+    return sub_1020();
+}
+
+void setbuf(FILE* fp, char* buf)
+{
+    /* tailcall */
+    return setbuf(fp, buf);
+}
+
+int64_t sub_1066()
+{
+    int64_t var_8 = 3;
+    /* tailcall */
+    return sub_1020();
+}
+
+ssize_t read(int32_t fd, void* buf, uint64_t nbytes)
+{
+    /* tailcall */
+    return read(fd, buf, nbytes);
+}
+
+int64_t sub_1076()
+{
+    int64_t var_8 = 4;
+    /* tailcall */
+    return sub_1020();
+}
+
+pid_t waitpid(pid_t pid, int32_t* stat_loc, int32_t options)
+{
+    /* tailcall */
+    return waitpid(pid, stat_loc, options);
+}
+
+int64_t sub_1086()
+{
+    int64_t var_8 = 5;
+    /* tailcall */
+    return sub_1020();
+}
+
+int64_t mprotect()
+{
+    /* tailcall */
+    return mprotect();
+}
+
+int64_t sub_1096()
+{
+    int64_t var_8 = 6;
+    /* tailcall */
+    return sub_1020();
+}
+
+void perror(char const* s)
+{
+    /* tailcall */
+    return perror(s);
+}
+
+int64_t sub_10a6()
+{
+    int64_t var_8 = 7;
+    /* tailcall */
+    return sub_1020();
+}
+
+void exit(int32_t status) __noreturn
+{
+    /* tailcall */
+    return exit(status);
+}
+
+int64_t sub_10b6()
+{
+    int64_t var_8 = 8;
+    /* tailcall */
+    return sub_1020();
+}
+
+pid_t fork()
+{
+    /* tailcall */
+    return fork();
+}
+
+int64_t sub_10c6()
+{
+    int64_t var_8 = 9;
+    /* tailcall */
+    return sub_1020();
+}
+
+void _start(int64_t arg1, int64_t arg2, void (* arg3)()) __noreturn
+{
+    int64_t stack_end_1;
+    int64_t stack_end = stack_end_1;
+    __libc_start_main(main, __return_addr, &ubp_av, nullptr, nullptr, arg3, &stack_end);
+    /* no return */
+}
+
+void deregister_tm_clones()
+{
+    return;
+}
+
+void sub_1130()
+{
+    return;
+}
+
+void _FINI_0()
+{
+    if (data_4078)
+        return;
+    
+    if (__cxa_finalize)
+        __cxa_finalize(__dso_handle);
+    
+    deregister_tm_clones();
+    data_4078 = 1;
+}
+
+void _INIT_0()
+{
+    /* tailcall */
+    return sub_1130();
+}
+
+uint64_t validate(char* arg1)
+{
+    void* fsbase;
+    int64_t rax = *(fsbase + 0x28);
+    char* i = arg1;
+    int32_t rbx = 0;
+    
+    do
+    {
+        rbx += *i;
+        i = &i[1];
+    } while (i != arg1 + _init);
+    
+    mprotect(arg1, _init, 5);
+    pid_t pid = fork();
+    
+    if (!pid)
+    {
+        uint32_t rdx_4 = rbx >> 0x1f >> 0x14;
+        
+        if ((&arg1[((rbx + rdx_4) & 0xfff) - rdx_4])() == rbx)
+        {
+            exit(rbx);
+            /* no return */
+        }
+        
+        exit(1);
+        /* no return */
+    }
+    
+    int32_t stat_loc;
+    waitpid(pid, &stat_loc, 0);
+    int32_t stat_loc_1 = stat_loc;
+    int32_t rbp_3;
+    
+    if ((stat_loc_1 & 0x7f) + 1 > 1)
+    {
+        puts("invalid license >:( the queen'll…");
+        rbp_3 = 0;
+    }
+    else
+    {
+        rbp_3 = stat_loc_1 & 0x7f;
+        
+        if (rbp_3)
+        {
+            puts("invalid license >:( the queen'll…");
+            rbp_3 = 0;
+        }
+        else if (stat_loc_1 >> 8 != rbx)
+            puts("invalid license >:( the queen'll…");
+        else
+        {
+            puts("Hmmm. Seems to check out.");
+            puts("fake{flag_here}");
+            puts("We'll be back...");
+            rbp_3 = 1;
+        }
+    }
+    
+    *(fsbase + 0x28);
+    
+    if (rax == *(fsbase + 0x28))
+        return rbp_3;
+    
+    __stack_chk_fail();
+    /* no return */
+}
+
+int32_t main(int32_t argc, char** argv, char** envp)
+{
+    setbuf(stdin, nullptr);
+    setbuf(__TMC_END__, nullptr);
+    puts("oi! you got a loicense for this …");
+    char* buf = mmap(nullptr, _init, 3, 0x22, 0xffffffff, 0);
+    
+    if (buf == -1)
+    {
+        perror("mmap");
+        return 1;
+    }
+    
+    if (read(0, buf, _init) >= 0)
+    {
+        validate(buf);
+        return 0;
+    }
+    
+    perror("read");
+    return 1;
+}
+
+int64_t _fini() __pure
+{
+    return;
+}
+
